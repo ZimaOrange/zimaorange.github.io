@@ -1,0 +1,33 @@
+name: Publish portfolio
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Unpack website
+        run: |
+          cat site.zip.part1 site.zip.part2 > /tmp/site.zip
+          echo 'f2a5680b6d0f9b6611917cbb2d31dfc49a19afc2a158e93daab97aff02eb4309  /tmp/site.zip' | sha256sum -c -
+          mkdir -p _site
+          unzip -q /tmp/site.zip -d _site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
