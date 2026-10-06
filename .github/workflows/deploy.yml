@@ -30,6 +30,9 @@ jobs:
           cat motion-expansion.zip.part* > /tmp/motion.zip
           echo '1dc8f68ecfe3fb4037cce044cadaaa133622029d3ce8f21b094d63fc86fe5067  /tmp/motion.zip' | sha256sum -c -
           unzip -q /tmp/motion.zip -d _site
+          cat motion-clean.zip.part* > /tmp/clean.zip
+          echo '3fa7fe8f12670b4a7528b5cd85373b8dcf6e56bb3f4d8b15dd59540c7eae032d  /tmp/clean.zip' | sha256sum -c -
+          unzip -oq /tmp/clean.zip -d _site
           cp index.html _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
