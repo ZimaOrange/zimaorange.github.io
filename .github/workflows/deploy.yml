@@ -24,6 +24,9 @@ jobs:
           echo 'a1419d8ec050fe38cf8ab4a1dc837c061259c8ac8c1893e841c229ba4381bdfe  /tmp/site.zip' | sha256sum -c -
           mkdir -p _site
           unzip -q /tmp/site.zip -d _site
+          cat houtu-assets.zip.part* > /tmp/houtu.zip
+          echo '368ae551899675e4e83dac2aa263aaa1c5c7a6ad6fe40e7470738d812dd28577  /tmp/houtu.zip' | sha256sum -c -
+          unzip -q /tmp/houtu.zip -d _site
           cp index.html _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
