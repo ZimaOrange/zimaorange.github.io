@@ -20,8 +20,8 @@ jobs:
       - uses: actions/checkout@v6
       - name: Unpack website
         run: |
-          cat site.zip.part1 site.zip.part2 > /tmp/site.zip
-          echo 'f2a5680b6d0f9b6611917cbb2d31dfc49a19afc2a158e93daab97aff02eb4309  /tmp/site.zip' | sha256sum -c -
+          cat portfolio-20261006.zip.part* > /tmp/site.zip
+          echo 'a1419d8ec050fe38cf8ab4a1dc837c061259c8ac8c1893e841c229ba4381bdfe  /tmp/site.zip' | sha256sum -c -
           mkdir -p _site
           unzip -q /tmp/site.zip -d _site
       - uses: actions/configure-pages@v5
