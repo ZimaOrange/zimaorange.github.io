@@ -61,7 +61,7 @@ header{background:linear-gradient(#070d0bf0,transparent)}.guide{background:#070d
 @media(min-width:701px){.intro{left:6vw;top:15%;transform:none;width:280px}.intro p{font-size:32px;line-height:1.4}.intro .small-label{font-size:5px}.intro .cn{font-size:6px}}
 
 /* Quiet identity focus and opt-in procedural sound. */
-.logo:focus-visible{outline:none;box-shadow:none;text-decoration:underline;text-decoration-color:#dad8c966;text-underline-offset:8px}.sound-toggle{position:fixed;z-index:6;left:42px;bottom:31px;font:10px Arial,'PingFang SC',sans-serif;letter-spacing:1px;min-height:40px;padding:8px 0;color:#b4bbac}.sound-toggle[aria-pressed="true"]{color:var(--paper)}.preview-tag{display:none}.opening-active .sound-toggle{visibility:hidden}.sound-toggle:focus-visible{outline:none;text-decoration:underline;text-underline-offset:5px}
+.logo:focus-visible{outline:none;box-shadow:none;text-decoration:underline;text-decoration-color:#dad8c966;text-underline-offset:8px}.sound-toggle{position:fixed;z-index:6;left:42px;bottom:31px;font:10px Arial,'PingFang SC',sans-serif;letter-spacing:1px;min-height:40px;padding:8px 0;color:#b4bbac}.sound-toggle[aria-pressed="true"]{color:var(--paper)}.preview-tag{display:none}.opening-active .sound-toggle{visibility:visible;z-index:1001}.sound-toggle:focus-visible{outline:none;text-decoration:underline;text-underline-offset:5px}
 @media(max-width:700px){.sound-toggle{left:6vw;bottom:26px;font-size:10px}.guide{bottom:84px;background:transparent}.guide.exploring{opacity:0}}
 
 /* The opening fades away; its title remains only as a quiet background imprint. */
@@ -89,11 +89,11 @@ header{background:linear-gradient(#070d0bf0,transparent)}.guide{background:#070d
  <div class="opening-progress" aria-hidden="true"><span id="opening-progress"></span></div>
  <div class="opening-foot"><div><div class="opening-number" aria-hidden="true"><span id="opening-number">000</span><small>%</small></div><span class="opening-status" id="opening-status" role="status">影像准备中 · 0 / 2</span></div><button class="opening-skip" id="opening-skip">跳过开场 ↗</button></div>
 </div>
-<div id="gallery" role="region" aria-label="向上滑动展开影集，反向滑动返回起点"></div><div class="vignette"></div><div class="grain"></div>
+<div id="gallery" role="region" aria-label="向下浏览影集，反向滑动返回起点"></div><div class="vignette"></div><div class="grain"></div>
 <header><button class="logo" id="home" aria-label="返回起点">齐马橙 <small><svg xmlns="http://www.w3.org/2000/svg" viewBox="50 0 5949 318" role="img" aria-label="ZIMAORANGE" class="brand-mark"><g fill="currentColor" transform="translate(0 318) scale(1 -1)"><path transform="translate(0 0)" d="M114 304 50 237H382L50 63V0H472L537 67H221L537 234V304Z"/><path transform="translate(652 0)" d="M50 257V0H117V318Z"/><path transform="translate(884 0)" d="M294 203Q289 203 283 206L116 304H50V0H116V220L284 125Q290 123 294 123Q299 123 305 125L472 220V0H538V304H472L305 206Q301 203 294 203Z"/><path transform="translate(1537 0)" d="M451 0H540L332 284Q318 303 294 303Q283 303 273.5 298.0Q264 293 258 284L50 0H138L295 214Z"/><path transform="translate(2192 0)" d="M538 121V181Q538 231 502.5 267.0Q467 303 416 303H171Q121 303 85.5 267.0Q50 231 50 181V121Q50 71 85.5 35.5Q121 0 171 0H416Q467 0 502.5 35.5Q538 71 538 121ZM472 181V121Q472 98 455.5 82.0Q439 66 416 66H171Q148 66 132.0 82.0Q116 98 116 121V181Q116 204 132.0 220.0Q148 236 171 236H416Q439 236 455.5 220.0Q472 204 472 181Z"/><path transform="translate(2845 0)" d="M430 78Q475 81 506.5 114.0Q538 147 538 193Q538 241 504.0 274.5Q470 308 423 308H116L50 243V241H423Q443 241 457.5 227.0Q472 213 472 193Q472 172 453 153Q446 145 433 145H116L50 80V0H116V78H335L416 0H512Z"/><path transform="translate(3498 0)" d="M451 0H540L332 284Q318 303 294 303Q283 303 273.5 298.0Q264 293 258 284L50 0H138L295 214Z"/><path transform="translate(4153 0)" d="M474 253V66L114 303H71Q62 303 56.0 296.5Q50 290 50 281V0H114V237L474 0H538V318Z"/><path transform="translate(4806 0)" d="M539 43V185H347L276 119H473V66H190Q173 66 159.0 73.5Q145 81 136 94Q117 122 117 151Q117 187 142.0 212.0Q167 237 202 237H539V303H202Q161 303 126.0 282.5Q91 262 70.5 227.5Q50 193 50 151Q50 112 71 71Q88 38 119.5 19.0Q151 0 188 0H496Q514 0 526.5 12.5Q539 25 539 43Z"/><path transform="translate(5460 0)" d="M465 237 539 303H124L50 237ZM465 119 539 185H124L50 119ZM465 0 539 66H124L50 0Z"/></g></svg></small></button><nav aria-label="主导航"><button id="index-open">作品</button><button id="info-open">关于</button></nav></header>
-<div class="guide"><span class="arrow">↑</span><p id="guide-text">向上滑动，展开影集</p><small>停下观看 · 点击进入</small></div>
+<div class="guide"><span class="arrow">↓</span><p id="guide-text">向下浏览，展开影集</p><small>停下观看 · 点击进入</small></div>
 
-<div class="flight-status"><span id="position">ALT. 0000</span><button class="nudge" id="rise" aria-label="向上展开影集">↑</button><button class="nudge" id="descend" aria-label="向下返回">↓</button></div>
+<div class="flight-status"><span id="position">ALT. 0000</span><button class="nudge" id="rise" aria-label="向下浏览影集">↓</button><button class="nudge" id="descend" aria-label="向上返回">↑</button></div>
 <button id="sound-toggle" class="sound-toggle" aria-pressed="false" title="合成环境声：风、雨、鸟鸣与远处铃音">开启声音 ◌</button>
 <div id="announcer" aria-live="polite"></div>
 <dialog id="detail" aria-labelledby="detail-title"><div class="detail-nav"><button class="back" id="return">← 返回漫游</button><span class="small-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="50 0 5949 318" role="img" aria-label="ZIMAORANGE" class="brand-mark"><g fill="currentColor" transform="translate(0 318) scale(1 -1)"><path transform="translate(0 0)" d="M114 304 50 237H382L50 63V0H472L537 67H221L537 234V304Z"/><path transform="translate(652 0)" d="M50 257V0H117V318Z"/><path transform="translate(884 0)" d="M294 203Q289 203 283 206L116 304H50V0H116V220L284 125Q290 123 294 123Q299 123 305 125L472 220V0H538V304H472L305 206Q301 203 294 203Z"/><path transform="translate(1537 0)" d="M451 0H540L332 284Q318 303 294 303Q283 303 273.5 298.0Q264 293 258 284L50 0H138L295 214Z"/><path transform="translate(2192 0)" d="M538 121V181Q538 231 502.5 267.0Q467 303 416 303H171Q121 303 85.5 267.0Q50 231 50 181V121Q50 71 85.5 35.5Q121 0 171 0H416Q467 0 502.5 35.5Q538 71 538 121ZM472 181V121Q472 98 455.5 82.0Q439 66 416 66H171Q148 66 132.0 82.0Q116 98 116 121V181Q116 204 132.0 220.0Q148 236 171 236H416Q439 236 455.5 220.0Q472 204 472 181Z"/><path transform="translate(2845 0)" d="M430 78Q475 81 506.5 114.0Q538 147 538 193Q538 241 504.0 274.5Q470 308 423 308H116L50 243V241H423Q443 241 457.5 227.0Q472 213 472 193Q472 172 453 153Q446 145 433 145H116L50 80V0H116V78H335L416 0H512Z"/><path transform="translate(3498 0)" d="M451 0H540L332 284Q318 303 294 303Q283 303 273.5 298.0Q264 293 258 284L50 0H138L295 214Z"/><path transform="translate(4153 0)" d="M474 253V66L114 303H71Q62 303 56.0 296.5Q50 290 50 281V0H114V237L474 0H538V318Z"/><path transform="translate(4806 0)" d="M539 43V185H347L276 119H473V66H190Q173 66 159.0 73.5Q145 81 136 94Q117 122 117 151Q117 187 142.0 212.0Q167 237 202 237H539V303H202Q161 303 126.0 282.5Q91 262 70.5 227.5Q50 193 50 151Q50 112 71 71Q88 38 119.5 19.0Q151 0 188 0H496Q514 0 526.5 12.5Q539 25 539 43Z"/><path transform="translate(5460 0)" d="M465 237 539 303H124L50 237ZM465 119 539 185H124L50 119ZM465 0 539 66H124L50 0Z"/></g></svg></span><span class="reading-progress" aria-hidden="true"></span></div><div class="detail-content"><div class="detail-heading"><div><span class="small-label" id="detail-type"></span><h1 id="detail-title"></h1></div><p id="project-count"></p></div><div class="detail-hero" id="detail-hero"></div><p id="hero-caption" class="hero-caption"></p><div class="detail-actions"><button id="view-full">查看完整大图 ↗</button><button id="share-work">复制作品链接 ↗</button><span id="share-status" role="status"></span></div><div class="work-facts"><span id="work-code"></span><span>齐马橙 · 实验叙事影像</span></div><div class="detail-copy"><h2>作品信息</h2><div><p id="detail-description"></p></div></div><p class="sequence-label"><span id="sequence-title">影像片段</span> <span id="sequence-count"></span></p><div class="image-sequence" id="sequence"></div><div class="detail-end"><button id="return-bottom">回到梦经过的地方 ↗</button></div></div></dialog>
@@ -123,7 +123,7 @@ function fillCard(el,i){
  }else el.replaceChildren(picture,meta);
 }
 workData.forEach((data,i)=>{const card=document.createElement('button');card.className='piece';card.setAttribute('aria-label','打开'+data.title+'，'+(data.type==='video'?'影片':'作品详情'));fillCard(card,i);card.addEventListener('click',()=>{if(performance.now()>ignoreTapUntil)openWork(i,card);});const point=e=>{if(e.pointerType==='mouse'&&performance.now()-lastNavigation>180&&!card.classList.contains('is-hovered'))focusWork(card);};card.addEventListener('pointerenter',point);card.addEventListener('pointermove',point);card.addEventListener('pointerleave',()=>focusWork(null));card.addEventListener('focus',()=>{if(card.matches(':focus-visible'))focusWork(card);});card.addEventListener('blur',()=>focusWork(null));gallery.append(card);cards.push(card);const item=document.createElement('button');item.className='index-card';item.setAttribute('aria-label','从目录打开'+data.title);fillCard(item,i);item.addEventListener('click',()=>openWork(i,item,true));$('#index-grid').append(item);});
-function focusWork(card){if(anyModal()||transitioning)return;hovered=!!card;if(card)target=travel;gallery.classList.toggle('has-focus',!!card);cards.forEach(c=>c.classList.toggle('is-hovered',c===card));$('#guide-text').textContent=card?'停留，或进入作品':'向上滑动，展开影集';}
+function focusWork(card){if(anyModal()||transitioning)return;hovered=!!card;if(card)target=travel;gallery.classList.toggle('has-focus',!!card);cards.forEach(c=>c.classList.toggle('is-hovered',c===card));$('#guide-text').textContent=card?'停留，或进入作品':'向下浏览，展开影集';}
 function anyModal(){return !!document.querySelector('dialog[open]');}
 function move(delta){if(anyModal()||transitioning||document.body.classList.contains('opening-active'))return;lastNavigation=performance.now();focusWork(null);target=Math.max(0,Math.min(travelLimit(),target+Math.max(-300,Math.min(300,delta))));wake();}
 window.addEventListener('wheel',e=>{if(anyModal())return;e.preventDefault();const factor=e.deltaMode===1?20:e.deltaMode===2?h:1;move(e.deltaY*factor*.6);},{passive:false});
@@ -131,18 +131,18 @@ let touchY=null,touchStartY=0,touchStartX=0,touchMoved=false;
 gallery.addEventListener('touchstart',e=>{touchY=e.touches[0].clientY;touchStartY=touchY;touchStartX=e.touches[0].clientX;touchMoved=false;},{passive:true});
 gallery.addEventListener('touchmove',e=>{if(touchY===null||anyModal())return;const point=e.touches[0];if(Math.hypot(point.clientY-touchStartY,point.clientX-touchStartX)>8)touchMoved=true;move((touchY-point.clientY)*1.05);touchY=point.clientY;},{passive:true});
 const endTouch=()=>{if(touchMoved)ignoreTapUntil=performance.now()+400;touchY=null;};gallery.addEventListener('touchend',endTouch);gallery.addEventListener('touchcancel',endTouch);
-window.addEventListener('keydown',e=>{if(anyModal())return;if(['ArrowDown','ArrowUp','PageDown','PageUp',' '].includes(e.key)){if(e.key===' '&&document.activeElement.tagName==='BUTTON')return;e.preventDefault();move((e.key==='ArrowDown'||e.key==='PageUp')?-190:190);}});
+window.addEventListener('keydown',e=>{if(anyModal())return;if(['ArrowDown','ArrowUp','PageDown','PageUp',' '].includes(e.key)){if(e.key===' '&&document.activeElement.tagName==='BUTTON')return;e.preventDefault();move((e.key==='ArrowUp'||e.key==='PageUp')?-190:190);}});
 $('#rise').onclick=()=>move(240);$('#descend').onclick=()=>move(-240);$('#home').onclick=()=>{target=0;focusWork(null);wake();};$('#index-open').onclick=()=>{focusWork(null);target=travel;$('#index').showModal();};$('#info-open').onclick=()=>{focusWork(null);target=travel;$('#info').showModal();};document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$('#'+b.dataset.close).close());
 function wake(){if(!frame)frame=requestAnimationFrame(draw);}
 function galleryGap(){return Math.max(490,h*.86);}
-function travelLimit(){const cw=w<700?Math.min(w*.86,490):Math.min(620,w*.48);const vh=cw/workData[0].ratio;const start=h-145-vh/2;return Math.max(0,(workData.length-1)*galleryGap()+h*.43-start);}
+function travelLimit(){return Math.max(0,(workData.length-1)*galleryGap());}
 function resize(){w=innerWidth;h=innerHeight;target=Math.max(0,Math.min(target,travelLimit()));travel=Math.max(0,Math.min(travel,travelLimit()));wake();}
 window.addEventListener('resize',resize);resize();
 function draw(time){const dt=Math.min(time-last||16,40);last=time;const paused=anyModal()||hovered;const prev=travel;if(!paused)travel=reduce?target:travel+(target-travel)*(1-Math.exp(-dt*(touchY!==null?.025:.011)));if(Math.abs(target-travel)<.03)travel=target;const speed=travel-prev;
 cards.forEach((card,i)=>{
  const compact=w<700,cw=compact?Math.min(w*.86,490):Math.min(620,w*.48);
- const visualHeight=cw/workData[i].ratio,startY=h-145-visualHeight/2;
- const y=startY-i*galleryGap()+travel,x=w*.5+(compact?0:(i%2?-.07:0)*w);
+ const visualHeight=cw/workData[i].ratio,startY=h*.44;
+ const y=startY+i*galleryGap()-travel,x=w*.5+(compact?0:(i%2?-.07:0)*w);
  const top=y-visualHeight/2,visible=top<h+40&&top+visualHeight+110>-40;
  const opacity=Math.max(0,Math.min(1,(h+visualHeight*.4-top)/(visualHeight*.85)));
  card.style.width=cw+'px';card.style.opacity=String(opacity);card.style.transform=`translate3d(${x-cw/2}px,${top}px,0)`;card.style.visibility=visible?'visible':'hidden';card.style.pointerEvents=visible&&opacity>.15?'auto':'none';card.tabIndex=visible&&opacity>.15?0:-1;
@@ -150,7 +150,7 @@ cards.forEach((card,i)=>{
 });
  const arrived=travel>=travelLimit()-2;
  $('#rise').disabled=arrived;$('#descend').disabled=travel<=1;
- if(!hovered)$('#guide-text').textContent=arrived?'点击封面，进入影集':'向上滑动，展开影集';
+ if(!hovered)$('#guide-text').textContent=arrived?'点击封面，进入影集':'向下浏览，展开影集';
  $('.guide').classList.remove('exploring');
 $('#position').textContent='ALT. '+String(Math.round(Math.abs(travel))).padStart(4,'0');
 frame=0;if(!paused&&Math.abs(target-travel)>.03)frame=requestAnimationFrame(draw);}
@@ -228,7 +228,7 @@ function startOpening(force=false){
 <script>
 // Original procedural ambience: wind, foliage, rain, birds, resonant metal and distant low tones.
 (()=>{
- const button=document.querySelector('#sound-toggle');let ctx,master,compressor,windGain,rainGain,windFilter,timer,fadeTimer,on=false,nextBird=0,nextBell=0,nextHorn=0;
+ const button=document.querySelector('#sound-toggle');let ctx,master,compressor,windGain,rainGain,windFilter,timer,fadeTimer,on=false,wanted=true,nextBird=0,nextBell=0,nextHorn=0;
  const rnd=(a,b)=>a+Math.random()*(b-a);
  function noise(seconds){const b=ctx.createBuffer(2,Math.floor(ctx.sampleRate*seconds),ctx.sampleRate);for(let c=0;c<2;c++){const d=b.getChannelData(c);let smooth=0;for(let i=0;i<d.length;i++){smooth=.985*smooth+.015*(Math.random()*2-1);d[i]=smooth*5;}}return b;}
  function bed(buffer,type,freq,q,level){const src=ctx.createBufferSource(),filter=ctx.createBiquadFilter(),gain=ctx.createGain();src.buffer=buffer;src.loop=true;filter.type=type;filter.frequency.value=freq;filter.Q.value=q;gain.gain.value=level;src.connect(filter).connect(gain).connect(compressor);src.start();return{gain,filter};}
@@ -238,13 +238,24 @@ function startOpening(force=false){
  function horn(at){const pan=rnd(-.3,.3),f=rnd(67,73);for(let i=1;i<=4;i++){const o=ctx.createOscillator(),g=ctx.createGain(),p=ctx.createStereoPanner();o.frequency.value=f*i;g.gain.setValueAtTime(0,at);g.gain.linearRampToValueAtTime(.018/(i*i),at+4);g.gain.linearRampToValueAtTime(.009/(i*i),at+10);g.gain.linearRampToValueAtTime(0,at+17);p.pan.value=pan;o.connect(g).connect(p).connect(compressor);o.start(at);o.stop(at+17.1);o.onended=()=>{o.disconnect();g.disconnect();p.disconnect();};}}
  function tick(){if(!on||document.hidden)return;const t=ctx.currentTime;windGain.gain.setTargetAtTime(.25+.12*Math.sin(t/13)+.05*Math.sin(t/3.7),t,3);rainGain.gain.setTargetAtTime(.08+.045*Math.sin(t/21),t,4);windFilter.frequency.setTargetAtTime(450+180*Math.sin(t/17),t,4);if(t>=nextBird){bird(t+.1);nextBird=t+rnd(8,17);}if(t>=nextBell){bell(t+.2);nextBell=t+rnd(23,38);}if(t>=nextHorn){horn(t+.2);nextHorn=t+rnd(40,58);}}
  function init(){ctx=new (window.AudioContext||window.webkitAudioContext)();master=ctx.createGain();master.gain.value=0;compressor=ctx.createDynamicsCompressor();compressor.threshold.value=-18;compressor.ratio.value=4;compressor.connect(master).connect(ctx.destination);const b=noise(19);const wind=bed(b,'lowpass',480,.4,.25);windGain=wind.gain;windFilter=wind.filter;bed(b,'bandpass',1500,.35,.085);rainGain=bed(noise(23),'highpass',1800,.5,.08).gain;nextBird=ctx.currentTime+3;nextBell=ctx.currentTime+8;nextHorn=ctx.currentTime+17;}
- function label(){button.setAttribute('aria-pressed',String(on));button.textContent=on?'声音已开启 · 关闭':'开启声音 ◌';}
- async function enable(){clearTimeout(fadeTimer);if(!ctx)init();await ctx.resume();on=true;master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setTargetAtTime(.55,ctx.currentTime,1.3);clearInterval(timer);timer=setInterval(tick,1000);tick();label();}
- function disable(){on=false;label();clearInterval(timer);if(!ctx)return;master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setTargetAtTime(0,ctx.currentTime,.25);fadeTimer=setTimeout(()=>{if(!on)ctx.suspend();},1500);}
- button.onclick=()=>{if(on)disable();else enable().catch(()=>{on=false;button.textContent='点击重试声音';button.setAttribute('aria-pressed','false');});};
- document.addEventListener('visibilitychange',()=>{if(!ctx)return;if(document.hidden){clearInterval(timer);ctx.suspend();}else if(on)enable().catch(disable);});
- window.addEventListener('pagehide',()=>{clearInterval(timer);clearTimeout(fadeTimer);if(ctx)ctx.suspend();});window.addEventListener('pageshow',()=>{if(on&&ctx&&!document.hidden)enable().catch(disable);});
- document.addEventListener('play',e=>{if(e.target.tagName==='VIDEO'&&on)disable();},true);
+ function label(){button.setAttribute('aria-pressed',String(on));button.textContent=on?'声音已开启 · 关闭':wanted?'轻触开启声音 ◌':'声音已关闭 · 开启';}
+ function playingVideo(){return [...document.querySelectorAll('video')].some(v=>!v.paused&&!v.ended);}
+ function syncSound(){
+  if(!ctx||ctx.state!=='running'||!wanted||document.hidden||playingVideo()){on=false;label();return;}
+  on=true;clearTimeout(fadeTimer);master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setTargetAtTime(.55,ctx.currentTime,1.3);clearInterval(timer);timer=setInterval(tick,1000);tick();label();
+ }
+ function enable(){
+  if(!wanted||document.hidden||playingVideo())return;
+  try{clearTimeout(fadeTimer);if(!ctx){init();ctx.addEventListener('statechange',syncSound);}ctx.resume().then(syncSound).catch(()=>{on=false;label();});syncSound();}catch(e){on=false;label();}
+ }
+ function disable(){wanted=false;on=false;label();clearInterval(timer);if(!ctx)return;master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setTargetAtTime(0,ctx.currentTime,.25);fadeTimer=setTimeout(()=>{if(!wanted)ctx.suspend();},1500);}
+ button.onclick=()=>{if(on)disable();else{wanted=true;enable();}};
+ const firstInteraction=e=>{if(e.target.closest?.('#sound-toggle'))return;if(wanted&&!on)enable();};
+ ['pointerup','touchend','keydown','click'].forEach(event=>document.addEventListener(event,firstInteraction,{passive:true}));
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){clearInterval(timer);if(ctx)ctx.suspend();}else if(wanted)enable();});
+ window.addEventListener('pagehide',()=>{clearInterval(timer);clearTimeout(fadeTimer);if(ctx)ctx.suspend();});window.addEventListener('pageshow',()=>{if(wanted)enable();});
+ document.addEventListener('play',e=>{if(e.target.tagName==='VIDEO')disable();},true);
+ label();enable();
 })();
 
 </script>
