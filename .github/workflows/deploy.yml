@@ -34,6 +34,8 @@ jobs:
           echo '3fa7fe8f12670b4a7528b5cd85373b8dcf6e56bb3f4d8b15dd59540c7eae032d  /tmp/clean.zip' | sha256sum -c -
           unzip -oq /tmp/clean.zip -d _site
           cp index.html _site/index.html
+          echo 'dc440b2f4a61367ab34b92bdb0aa2518233d27913ec3142a9e003a383b4ebe3e  mobile-share.zip' | sha256sum -c -
+          unzip -oq mobile-share.zip -d _site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
