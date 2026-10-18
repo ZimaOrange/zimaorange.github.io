@@ -43,6 +43,12 @@ jobs:
           echo '4b7e8c5284dd3ee46e9cc20f9a8d2f100a17307414ee27100744ef9c34651fd3  /tmp/experiments.zip' | sha256sum -c -
           unzip -oq /tmp/experiments.zip -d _site
           python3 install-experiments.py _site
+      # Experiment overlay v47
+      - name: Keep music as background accompaniment
+        run: |
+          echo '36fe5bc71361af262c9370f4b4bd6bd89db2bf2d759ac7bb107613e557cbab6c  experiments-v47.zip' | sha256sum -c -
+          unzip -oq experiments-v47.zip -d _site
+          python3 install-experiments.py _site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
