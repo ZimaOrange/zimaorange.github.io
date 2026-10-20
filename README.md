@@ -8,6 +8,13 @@ GitHub Actions 按 `.github/workflows/deploy.yml` 中的顺序解压作品集与
 
 ## 实验交互
 
+2026-10-20 暂时停止公开体验：工作流中的 `PUBLISH_EXPERIMENTS` 设为 `'false'`。
+三个实验增量步骤及导航注入会一起跳过，最终站点不发布 `/experiments/`、
+`/experiments/tidal-echoes/` 或该作品的应用资源。首页及七个作品页保持原始版本。
+发布前会检查实验目录和导航确实不存在；归档与源码继续保留。
+恢复时只需把该开关改为 `'true'` 并重新发布。
+此开关仅控制 GitHub Pages 的发布内容，不更改仓库可见性，也不能撤回已下载的副本。
+
 - 栏目：`/experiments/`
 - 潮汐回响：`/experiments/tidal-echoes/`
 
