@@ -3,6 +3,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+env:
+  # Set to 'true' to restore the archived experiment and its navigation entries.
+  PUBLISH_EXPERIMENTS: 'false'
 permissions:
   contents: read
   pages: write
@@ -38,6 +41,7 @@ jobs:
           unzip -oq portfolio-polish.zip -d _site
       # Experiment overlay v46
       - name: Add interactive experiments
+        if: env.PUBLISH_EXPERIMENTS == 'true'
         run: |
           cat experiments-v46.zip.part* > /tmp/experiments.zip
           echo '4b7e8c5284dd3ee46e9cc20f9a8d2f100a17307414ee27100744ef9c34651fd3  /tmp/experiments.zip' | sha256sum -c -
@@ -45,16 +49,34 @@ jobs:
           python3 install-experiments.py _site
       # Experiment overlay v47
       - name: Keep music as background accompaniment
+        if: env.PUBLISH_EXPERIMENTS == 'true'
         run: |
           echo '36fe5bc71361af262c9370f4b4bd6bd89db2bf2d759ac7bb107613e557cbab6c  experiments-v47.zip' | sha256sum -c -
           unzip -oq experiments-v47.zip -d _site
           python3 install-experiments.py _site
       # Experiment overlay v48
       - name: Add optional hand overlay to artwork recordings
+        if: env.PUBLISH_EXPERIMENTS == 'true'
         run: |
           echo 'd7aca4198fc821d57a99f6df3863a81e7ac3b168f961bb2ddfe9e3634af7f0bf  experiments-v48.zip' | sha256sum -c -
           unzip -oq experiments-v48.zip -d _site
           python3 install-experiments.py _site
+      - name: Verify public experiments are absent
+        if: env.PUBLISH_EXPERIMENTS != 'true'
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          site = Path("_site")
+          assert not (site / "experiments").exists(), "Experiment files must not be published"
+          pages = [site / "index.html", *site.glob("work-*.html")]
+          assert len(pages) == 8 and all(p.is_file() for p in pages), "Portfolio pages are incomplete"
+          for page in pages:
+              text = page.read_text(encoding="utf-8")
+              assert not any(marker in text for marker in (
+                  "experiments-nav", "/experiments/", "tidal-echoes",
+              )), f"Experiment link remains in {page.name}"
+          print("All 8 portfolio pages preserved; experiment routes and assets are absent.")
+          PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
