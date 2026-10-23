@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 env:
   # Set to 'true' to restore the archived experiment and its navigation entries.
-  PUBLISH_EXPERIMENTS: 'false'
+  PUBLISH_EXPERIMENTS: 'true'
 permissions:
   contents: read
   pages: write
